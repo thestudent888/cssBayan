@@ -52,7 +52,7 @@ body {
 .layout .image {
   height: 0;
   visibility: hidden;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .layout:hover .image,
