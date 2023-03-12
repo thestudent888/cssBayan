@@ -5,12 +5,39 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   background-color: #eeece9;
+  overflow-y: scroll
 }
 
 .container {
   max-width: 1200px;
   margin: 0px auto;
   padding: 20px 20px;
+  height: 100%;
+}
+
+.container h2 {
+  color:#4b4beb;
+  transition: color 0.5s ease-out;
+}
+
+.container:hover h2 {
+  color: black;
+  transition: color 0.5s ease-in;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.container:hover .icon-plus {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+
+
+.container:not(:hover) .layout:focus .icon-close{
+  opacity: 0;
 }
 
 .icon-plus,
@@ -22,10 +49,53 @@ body {
   transition: opacity 0.5s ease-out;
 }
 
+.layout {
+  margin: 20px 0;
+}
+
 .layout .image {
   height: 0px;
   visibility: hidden;
+  transition: all 0.25s ease-in-out;
 }
+
+.layout:hover .image,
+.layout:focus .image,
+.layout:focus-within .image {
+  height: 550px;
+  visibility: visible;
+  transition: all 0.5s ease-in-out;  
+  transform: scale(1);
+}
+
+.layout:focus {
+  outline: none;
+}
+
+.layout:focus h2 {
+  color: #000;
+}
+
+.layout:focus .icon-close{
+  opacity: 1;
+}
+
+.layout:focus .icon-plus{
+  opacity: 0;
+}
+
+.layout:hover .icon-plus {
+  opacity: 0;
+}
+
+.layout:hover .icon-close {
+  opacity: 1;
+}
+
+.layout:active {
+  cursor: crosshair;
+}
+
 
 .line {
   border-bottom: 1px solid #d4cece;
@@ -41,4 +111,38 @@ body {
   margin: 0;
   padding: 10px 0px 0px 10px;
   max-width: 80%;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid rgb(95, 95, 94);
+}
+
+@media screen and (max-width:320px){
+  body {
+    font-size: 12px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .layout:hover .image,
+  .layout:focus .image,
+  .layout:focus-within .image {
+    height: 160px;
+  }
+}
+
+@media screen and (min-width:321px) and (max-width: 820px) {
+  body {
+    font-size: 26px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .layout:hover .image,
+  .layout:focus .image,
+  .layout:focus-within .image {
+    height: 410px;
+  }
 }
