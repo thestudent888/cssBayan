@@ -1,5 +1,44 @@
-* {
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  background-color: #eeece9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 20px 20px;
+}
+
+.icon-plus,
+.icon-close {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.layout .image {
+  height: 0px;
+  visibility: hidden;
+}
+
+.line {
+  border-bottom: 1px solid #d4cece;
+}
+
+
+.title {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.title h2 {
+  margin: 0;
+  padding: 10px 0px 0px 10px;
+  max-width: 80%;
 }
